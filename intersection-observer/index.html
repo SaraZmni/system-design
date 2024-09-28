@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design</title>
+    <link rel="stylesheet" href="styles.css"/>  
+    <template id="card-template"></template>
+        <article class="card">
+            <h3 class="card__title"></h3>
+            <div class="card__body">
+                <div class="card__body__image"></div>
+                <section class="card__body__content"></section>
+            </div>
+        </article>
+    </template>    
+</head>
+<body>
+    <main id="container">
+        <div id="list"></div>
+        <div id="bottom-observer">
+            Bottom Observer
+        </div>
+    </main>
+</body>
+<script type="module">
+    const [template,list,observerElement] = document.querySelectorAll('#card_template,#list,#bottom-observer');
+
+    let page = 0;
+    const observer = new IntersectionObserver(async([entry]) => {
+        if(entry.isIntersecting){
+            const data = await DB.getPage(page++)
+        }
+    },{threshold:0.2});
+
+
+</script>
+</html>
