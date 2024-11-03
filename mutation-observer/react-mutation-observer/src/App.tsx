@@ -35,7 +35,7 @@ function App() {
 
   const mutationRef = useMutationObserver(() => console.log("change"), options);
 
-  const combinedRef = useCombinedRef(mutationRef, elementRef);
+  // const combinedRef = useCombinedRef(mutationRef, elementRef);
 
   return (
     <div>
